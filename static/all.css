@@ -1,0 +1,36 @@
+.chart-wrapper {
+  padding: 30px;
+  margin: 20px;
+  border-bottom: 1px solid #000;
+}
+
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 20px;
+  margin: 20px 0 30px 0;
+}
+
+.header .button {
+  margin: 0 20px;
+}
+
+.button-wrapper {
+  margin-left: 50px;
+}
+
+.title {
+  font-size: 5em;
+  font-weight: 100;
+}
+
+.sub-header {
+  margin: 20px;
+  font-size: 4.3em;
+  font-weight: 100;
+}
+
+.chart-header {
+  padding: 0 10px 10px 10px;
+  font-size: 3.5em;
+  font-weight: 100;
+}

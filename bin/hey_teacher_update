@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+require 'json'
+
+`bundle exec rake`
+last_simplecov_result = File.read('coverage/.last_run.json')
+new_simplecov_percentage = JSON.parse(last_simplecov_result)['result']['covered_percent']
+new_rubocop_offense_count = `rubocop`.match(/(\d+)\soffenses\sdetected/).
+  captures[0].to_i
+
+new_readme = File.read('README.md').
+  gsub(/SimpleCov: \d+\.?\d*/, "SimpleCov: #{new_simplecov_percentage}").
+  gsub(/Rubocop Offenses: \d+/, "Rubocop Offenses: #{new_rubocop_offense_count}")
+
+File.open('README.md', 'w') do |file|
+  file.write(new_readme)
+end
